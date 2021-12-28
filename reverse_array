@@ -1,0 +1,72 @@
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+void brut_reverse(vector<int>&vec,int n)
+{
+    int temp[n];
+    int j=0;
+    for (int i = n-1; i >=0; i--)
+    {
+        /* code */
+        temp[j]=vec[i];
+        j++;
+    }
+    for (int i = 0; i < vec.size(); i++)
+    {
+         vec[i] =temp[i];
+        /* code */
+    }
+}
+void optimized_reverse (vector<int>&vec,int n)
+{
+       // 2 pointer technique
+       int pointer1,pointer2;
+       pointer1=0;
+       pointer2=vec.size()-1;
+       
+       while(pointer1<= pointer2)
+       {
+           swap(vec[pointer1],vec[pointer2]);
+           pointer1++;
+           pointer2--;
+       }
+
+}
+int main(int argc, char const *argv[])
+{
+    vector<int >vec;
+    int k,n;
+    cout<<"enter the size :"<<endl;
+    cin>>n;
+    cout<<"Enter the elements u want to insert :\n";
+    for (int i = 0; i < n; i++)
+    {
+        /* code */
+        cin>>k;
+         vec.push_back(k);
+    }
+    cout<<"\n";
+    for (int i = 0; i < vec.size(); i++)
+    {
+        cout<< vec[i]<<" ";
+        /* code */
+    }
+   brut_reverse(vec,n);
+    cout<<"\n";
+    for (int i = 0; i < vec.size(); i++)
+    {
+        cout<< vec[i]<<" ";
+        /* code */
+    }
+   optimized_reverse(vec,n);
+   cout<<"\n";
+    for (int i = 0; i < vec.size(); i++)
+    {
+        cout<< vec[i]<<" ";
+        /* code */
+    }
+    
+
+
+    return 0;
+}
