@@ -31,8 +31,11 @@ void myalgo(int arr[],int low ,int high )
         else if (arr[p1]>=0 && arr[p2]<0)
         {
             swap(&arr[p1],&arr[p2]);
-            --p1;
-            --p2;
+           if (p1 >= 1)
+            {
+                --p1;
+                --p2;
+            }
         }
         
     }
